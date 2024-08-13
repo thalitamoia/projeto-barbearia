@@ -1,0 +1,11 @@
+<h1>Fatura</h1>
+<p>Nome: {{ agendamento.nome }}</p>
+<p>Telefone: {{ agendamento.telefone }}</p>
+<p>Email: {{ agendamento.email }}</p>
+<p>Data: {{ agendamento.data }}</p>
+<p>Horário: {{ agendamento.horario }}</p>
+<p>Serviço: {{ agendamento.servico }}</p>
+<p>Valor: R$ {{ agendamento.valor }}</p>
+<p>Contribuinte: {% if agendamento.contribuinte %}Sim{% else %}Não{% endif %}</p>
+<p>Número do Contribuinte: {{ agendamento.contribuinte_numero }}</p>
+<p>Observações: {{ agendamento.observacao }}</p>

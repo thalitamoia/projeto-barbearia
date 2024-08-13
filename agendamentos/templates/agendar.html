@@ -1,0 +1,27 @@
+<h1>Agendar Serviço</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div id="contribuinte-numero" style="display: none;">
+        {{ form.contribuinte_numero.label_tag }}
+        {{ form.contribuinte_numero }}
+    </div>
+    <button type="submit">Agendar</button>
+</form>
+
+<script>
+    const contribuinteCheckbox = document.querySelector('input[name="contribuinte"]');
+    const contribuinteNumeroDiv = document.getElementById('contribuinte-numero');
+
+    contribuinteCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            contribuinteNumeroDiv.style.display = 'block';
+        } else {
+            contribuinteNumeroDiv.style.display = 'none';
+        }
+    });
+
+    if (contribuinteCheckbox.checked) {
+        contribuinteNumeroDiv.style.display = 'block';
+    }
+</script>
